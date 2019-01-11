@@ -1,0 +1,15 @@
+[[constraint]]
+  name = "github.com/helm/chartmuseum"
+  version = "0.8.0"
+
+[[constraint]]
+  name = "github.com/chartmuseum/storage"
+  version = "0.2.0"
+
+[[constraint]]
+  name = "github.com/urfave/cli"
+  version = "1.20.0"
+
+[prune]
+  go-tests = true
+  unused-packages = true
