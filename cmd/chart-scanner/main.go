@@ -34,5 +34,8 @@ func cliHandler(c *cli.Context) {
 		log.Fatal(err)
 	}
 	backend := backendFromConfig(conf)
-	fmt.Println(backend)
+	err = scanBackend(backend)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
