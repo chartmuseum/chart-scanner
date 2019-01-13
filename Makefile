@@ -33,3 +33,7 @@ get-version:
 .PHONY: fix-deps
 fix-deps:
 	cp storage_fix.go vendor/github.com/chartmuseum/storage/storage.go
+
+.PHONY: tree
+tree:
+	tree -I vendor
