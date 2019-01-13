@@ -20,6 +20,7 @@ var (
 )
 
 func main() {
+	log.SetOutput(os.Stdout)
 	app := cli.NewApp()
 	app.Name = "chart-scanner"
 	app.Version = fmt.Sprintf("%s (build %s)", Version, Revision)
@@ -43,8 +44,5 @@ func cliHandler(c *cli.Context) {
 		log.Fatal(err)
 	}
 	backend := backendFromConfig(conf)
-	err = scanBackend(backend)
-	if err != nil {
-		log.Fatal(err)
-	}
+	scan(backend, "")
 }

@@ -41,7 +41,7 @@ func backendFromConfig(conf *config.Config) storage.Backend {
 
 func localBackendFromConfig(conf *config.Config) storage.Backend {
 	crashIfConfigMissingVars(conf, []string{"storage.local.rootdir"})
-	return storage.Backend(storage.NewLocalFilesystemBackend(
+	return storage.Backend(NewLocalFilesystemBackendWithDir(
 		conf.GetString("storage.local.rootdir"),
 	))
 }
