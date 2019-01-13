@@ -2,7 +2,7 @@
 
 ## Background
 
-This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link) in [ChartMuseum](https://github.com/helm/chartmuseum).
+This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link), affecting all versions of [ChartMuseum](https://github.com/helm/chartmuseum) <= 0.8.0.
 
 ## Usage
 
