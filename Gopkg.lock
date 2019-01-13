@@ -105,6 +105,22 @@
   version = "v1.16.18"
 
 [[projects]]
+  branch = "master"
+  digest = "1:858393fa5ceba666c451737996cc1b36852ed67b36d87776699c63d493eacfc6"
+  name = "github.com/baidubce/bce-sdk-go"
+  packages = [
+    "auth",
+    "bce",
+    "http",
+    "services/bos",
+    "services/bos/api",
+    "util",
+    "util/log",
+  ]
+  pruneopts = "UT"
+  revision = "8fa9e5a1f3045eaf84cc002b3ee22f904911cc5e"
+
+[[projects]]
   digest = "1:65b0d980b428a6ad4425f2df4cd5410edd81f044cf527bd1c345368444649e58"
   name = "github.com/census-instrumentation/opencensus-proto"
   packages = [
@@ -118,12 +134,12 @@
   version = "v0.1.0"
 
 [[projects]]
-  digest = "1:55cf369f451dacdc745ea339171e59c30e7c02b6d4dae1963c64c81d8bc6af07"
+  digest = "1:fbf2fc014605a2fe5dc380513e7486ebae04f826bc978580e95903acccce00fa"
   name = "github.com/chartmuseum/storage"
   packages = ["."]
   pruneopts = "UT"
-  revision = "1b93b965ed4312faba0edd08c0b2ca3e8a86b175"
-  version = "v0.2.0"
+  revision = "8fc579e11d4fd6b096e2af248b6248719952b0f8"
+  version = "v0.3.0"
 
 [[projects]]
   digest = "1:76dc72490af7174349349838f2fe118996381b31ea83243812a97e5a0fd5ed55"
@@ -140,22 +156,6 @@
   pruneopts = "UT"
   revision = "c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9"
   version = "v1.4.7"
-
-[[projects]]
-  digest = "1:ad53d1f710522a38d1f0e5e0a55a194b1c6b2cd8e84313568e43523271f0cf62"
-  name = "github.com/go-redis/redis"
-  packages = [
-    ".",
-    "internal",
-    "internal/consistenthash",
-    "internal/hashtag",
-    "internal/pool",
-    "internal/proto",
-    "internal/util",
-  ]
-  pruneopts = "UT"
-  revision = "22be8a3eaf992c828cecb69dc07348313bf08d2e"
-  version = "v6.15.1"
 
 [[projects]]
   digest = "1:588beb9f80d2b0afddf05663b32d01c867da419458b560471d81cca0286e76b8"
@@ -222,12 +222,9 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:b83c16cd8ec7a698a95b8e19d201bdad16f16d3953ee8e4de6acaac7476b4e40"
+  digest = "1:084926f024557f92da701b96b9f8a312d6e926ca17d37936b114bc480a906ece"
   name = "github.com/helm/chartmuseum"
-  packages = [
-    "pkg/cache",
-    "pkg/config",
-  ]
+  packages = ["pkg/config"]
   pruneopts = "UT"
   revision = "76bd6ee936e68485dad8b44c2ef071bf36645689"
   version = "v0.8.0"
@@ -541,7 +538,6 @@
   analyzer-version = 1
   input-imports = [
     "github.com/chartmuseum/storage",
-    "github.com/helm/chartmuseum/pkg/cache",
     "github.com/helm/chartmuseum/pkg/config",
     "github.com/urfave/cli",
   ]
