@@ -6,7 +6,7 @@ This tool will attempt to detect any charts that may have been uploaded via [thi
 
 ## Usage
 
-Command-line options are identical to the ones in ChartMuseum 0.8.0 (the package is imported and re-used).
+Command-line storage options are identical to the ones used in ChartMuseum (the package is imported and re-used).
 
 ### Using with Amazon S3
 
@@ -124,6 +124,22 @@ chart-scanner \
   --storage-oracle-bucket="my-ocs-bucket" \
   --storage-oracle-prefix="" \
   --storage-oracle-compartmentid="ocid1.compartment.oc1..1234"
+```
+
+### Using with Baidu Cloud BOS Storage
+
+Make sure your environment is properly setup to access `my-bos-bucket`.
+
+To do so, you must set the following env vars:
+- `BAIDU_CLOUD_ACCESS_KEY_ID`
+- `BAIDU_CLOUD_ACCESS_KEY_SECRET`
+
+```bash
+chart-scanner \
+  --storage="baidu" \
+  --storage-baidu-bucket="my-bos-bucket" \
+  --storage-baidu-prefix="" \
+  --storage-baidu-endpoint="bj.bcebos.com"
 ```
 
 ### Using with local filesystem storage
