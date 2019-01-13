@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strings"
 
 	"github.com/helm/chartmuseum/pkg/config"
@@ -31,6 +32,7 @@ func main() {
 		}
 	}
 	app.Flags = flags
+	sort.Sort(cli.FlagsByName(app.Flags))
 	app.Run(os.Args)
 }
 
