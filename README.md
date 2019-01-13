@@ -4,16 +4,26 @@
 
 This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link), affecting all versions of [ChartMuseum](https://github.com/helm/chartmuseum) <= 0.8.0.
 
+## Installation
+
+Install via go get:
+
+```
+go get -u github.com/jdolitsky/chart-scanner/cmd/chart-scanner
+```
+
 ## Usage
 
 Command-line storage options are identical to the ones used in ChartMuseum (the package is imported and re-used).
+
+See all available options with `chart-scanner --help`.
 
 ### Using with Amazon S3
 
 Make sure your environment is properly setup to access `my-s3-bucket`
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="amazon" \
   --storage-amazon-bucket="my-s3-bucket" \
   --storage-amazon-prefix="" \
@@ -56,7 +66,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/[FILE_NAME].json"
 More info on Google Cloud authentication can be found [here](https://cloud.google.com/docs/authentication/getting-started).
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="google" \
   --storage-google-bucket="my-gcs-bucket" \
   --storage-google-prefix=""
@@ -71,7 +81,7 @@ To do so, you must set the following env vars:
 - `AZURE_STORAGE_ACCESS_KEY`
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="microsoft" \
   --storage-microsoft-container="mycontainer" \
   --storage-microsoft-prefix=""
@@ -86,7 +96,7 @@ To do so, you must set the following env vars:
 - `ALIBABA_CLOUD_ACCESS_KEY_SECRET`
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="alibaba" \
   --storage-alibaba-bucket="my-oss-bucket" \
   --storage-alibaba-prefix="" \
@@ -105,7 +115,7 @@ To do so, you must set the following env vars (depending on your openstack versi
 - `OS_PASSWORD`
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="openstack" \
   --storage-openstack-container="mycontainer" \
   --storage-openstack-prefix="" \
@@ -119,7 +129,7 @@ Make sure your environment is properly setup to access `my-ocs-bucket`.
 More info on Oracle Cloud Infrastructure authentication can be found [here](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm).
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="oracle" \
   --storage-oracle-bucket="my-ocs-bucket" \
   --storage-oracle-prefix="" \
@@ -135,7 +145,7 @@ To do so, you must set the following env vars:
 - `BAIDU_CLOUD_ACCESS_KEY_SECRET`
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="baidu" \
   --storage-baidu-bucket="my-bos-bucket" \
   --storage-baidu-prefix="" \
@@ -146,7 +156,7 @@ chart-scanner \
 Make sure you have read access to `./chartstorage`.
 
 ```bash
-chart-scanner \
+chart-scanner --debug \
   --storage="local" \
   --storage-local-rootdir="./chartstorage"
 ```
