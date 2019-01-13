@@ -17,6 +17,8 @@ var (
 
 	// Revision is the git commit id (added at compile time)
 	Revision string
+
+	exitCode int
 )
 
 func main() {
@@ -25,7 +27,12 @@ func main() {
 	app.Name = "chart-scanner"
 	app.Version = fmt.Sprintf("%s (build %s)", Version, Revision)
 	app.Usage = "checks a storage directory for evil charts"
+	app.Flags = buildCliFlags()
 	app.Action = cliHandler
+	app.Run(os.Args)
+}
+
+func buildCliFlags() []cli.Flag {
 	var flags []cli.Flag
 	for _, flag := range config.CLIFlags {
 		name := flag.GetName()
@@ -33,9 +40,8 @@ func main() {
 			flags = append(flags, flag)
 		}
 	}
-	app.Flags = flags
-	sort.Sort(cli.FlagsByName(app.Flags))
-	app.Run(os.Args)
+	sort.Sort(cli.FlagsByName(flags))
+	return flags
 }
 
 func cliHandler(c *cli.Context) {
@@ -55,4 +61,6 @@ func cliHandler(c *cli.Context) {
 
 	debug := conf.GetBool("debug")
 	scan(backend, "", debug)
+
+	os.Exit(exitCode)
 }

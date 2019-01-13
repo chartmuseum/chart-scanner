@@ -30,4 +30,7 @@ func validateChartPackage(filePath string, debug bool) {
 	if debug {
 		log.Printf("DEBUG %s is valid\n", filePath)
 	}
+
+	exitCode = 1
+	log.Printf("ERROR %s is invalid: bad chart name\n", filePath)
 }
