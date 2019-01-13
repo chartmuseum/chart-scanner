@@ -12,6 +12,23 @@ Install via go get:
 go get -u github.com/jdolitsky/chart-scanner/cmd/chart-scanner
 ```
 
+## Example
+
+The following shows detection of the test chart `evil-1.0.0.tgz` found in this repo:
+
+```
+$ git clone git@github.com:jdolitsky/chart-scanner.git
+$ cd chart-scanner
+$ chart-scanner --debug --storage=local --storage-local-rootdir=$(pwd)/testdata/charts
+2019/01/13 17:45:17 DEBUG org1/repo1/acs-engine-autoscaler-2.2.2.tgz is valid
+2019/01/13 17:45:17 DEBUG org1/repo2/aerospike-0.1.7.tgz is valid
+2019/01/13 17:45:17 DEBUG org2/repo1/apm-server-0.1.0.tgz is valid
+2019/01/13 17:45:17 DEBUG org2/repo2/ark-1.2.3.tgz is valid
+2019/01/13 17:45:17 ERROR org2/repo2/evil-1.0.0.tgz has bad chart name "../../../../charts/org2/repo2/evil"
+$ echo $?
+1
+```
+
 ## Usage
 
 Command-line storage options are identical to the ones used in ChartMuseum (the package is imported and re-used).
