@@ -28,7 +28,8 @@ func main() {
 	app.Action = cliHandler
 	var flags []cli.Flag
 	for _, flag := range config.CLIFlags {
-		if strings.HasPrefix(flag.GetName(), "storage") {
+		name := flag.GetName()
+		if name == "debug" || strings.HasPrefix(name, "storage") {
 			flags = append(flags, flag)
 		}
 	}
@@ -52,5 +53,6 @@ func cliHandler(c *cli.Context) {
 		log.Fatal(err)
 	}
 
-	scan(backend, "")
+	debug := conf.GetBool("debug")
+	scan(backend, "", debug)
 }

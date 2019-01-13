@@ -13,19 +13,21 @@ func check(backend storage.Backend) error {
 	return err
 }
 
-func scan(backend storage.Backend, prefix string) {
+func scan(backend storage.Backend, prefix string, debug bool) {
 	objects, _ := backend.ListObjects(prefix)
 	for _, object := range objects {
 		fullPath := path.Join(prefix, object.Path)
 		isChartPackage := strings.HasSuffix(fullPath, ".tgz")
 		if isChartPackage {
-			validateChartPackage(fullPath)
+			validateChartPackage(fullPath, debug)
 		} else {
-			scan(backend, fullPath)
+			scan(backend, fullPath, debug)
 		}
 	}
 }
 
-func validateChartPackage(filePath string) {
-	log.Printf("%s is valid\n", filePath)
+func validateChartPackage(filePath string, debug bool) {
+	if debug {
+		log.Printf("DEBUG %s is valid\n", filePath)
+	}
 }
