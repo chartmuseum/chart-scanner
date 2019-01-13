@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/helm/chartmuseum/pkg/config"
 	"github.com/urfave/cli"
@@ -23,7 +24,13 @@ func main() {
 	app.Version = fmt.Sprintf("%s (build %s)", Version, Revision)
 	app.Usage = "checks a storage directory for evil charts"
 	app.Action = cliHandler
-	app.Flags = config.CLIFlags
+	var flags []cli.Flag
+	for _, flag := range config.CLIFlags {
+		if strings.HasPrefix(flag.GetName(), "storage") {
+			flags = append(flags, flag)
+		}
+	}
+	app.Flags = flags
 	app.Run(os.Args)
 }
 
