@@ -43,6 +43,14 @@ func cliHandler(c *cli.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	backend := backendFromConfig(conf)
+
+	// First make sure we have access to the root storage dir
+	err = check(backend)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	scan(backend, "")
 }

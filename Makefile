@@ -29,3 +29,7 @@ clean:
 .PHONY: get-version
 get-version:
 	@echo $(VERSION)
+
+.PHONY: fix-deps
+fix-deps:
+	cp storage_fix.go vendor/github.com/chartmuseum/storage/storage.go
