@@ -4,7 +4,7 @@ builds:
   env:
   - CGO_ENABLED=0
   ldflags:
-  - -w -X main.version={{.Version}} -X main.revision={{.ShortCommit}}
+  - -w -X main.Version={{.Version}} -X main.Revision={{.ShortCommit}}
   goos:
   - darwin
   - linux
