@@ -211,3 +211,7 @@ chart-scanner --debug \
 All command-line options can be specified as environment variables, which are defined by the command-line option, capitalized, with all -'s replaced with _'s.
 
 For example, the env var STORAGE_AMAZON_BUCKET can be used in place of --storage-amazon-bucket.
+
+## Reporting a Security Issue
+
+If you discover a security issue in Helm or ChartMuseum, please follow the instructions found [here](https://github.com/helm/helm/blob/master/CONTRIBUTING.md#reporting-a-security-issue).
