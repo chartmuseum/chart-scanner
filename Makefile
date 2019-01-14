@@ -30,6 +30,10 @@ clean:
 get-version:
 	@echo $(VERSION)
 
+.PHONY: update-deps
+update-deps:
+	dep ensure --update
+
 .PHONY: fix-deps
 fix-deps:
 	cp storage_fix.go vendor/github.com/chartmuseum/storage/storage.go
