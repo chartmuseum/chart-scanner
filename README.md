@@ -1,5 +1,7 @@
 # chart-scanner
 
+[![Codefresh build status](https://g.codefresh.io/api/badges/pipeline/chartmuseum/jdolitsky%2Fchart-scanner%2Fmaster?type=cf-1)](https://g.codefresh.io/public/accounts/chartmuseum/pipelines/jdolitsky/chart-scanner/master)
+
 ## Background
 
 This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link), affecting all versions of [ChartMuseum](https://github.com/helm/chartmuseum) <= 0.8.0.
