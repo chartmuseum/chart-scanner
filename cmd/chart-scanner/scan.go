@@ -43,12 +43,21 @@ func validateChartPackage(backend storage.Backend, filePath string, debug bool) 
 		exitCode = 1
 		return
 	}
+
+	fileBaseName := filepath.Base(filePath)
 	name := chart.Metadata.Name
-	if !strings.HasPrefix(filepath.Base(filePath), fmt.Sprintf("%s-", name)) {
+	version := chart.Metadata.Version
+
+	// the actual validation occurs here
+	if strings.ContainsAny(name, "/\\") ||
+		strings.ContainsAny(version, "/\\") ||
+		fileBaseName != fmt.Sprintf("%s-%s.tgz", name, version) {
+
 		log.Printf("ERROR %s has bad chart name \"%s\"\n", filePath, name)
 		exitCode = 1
 		return
 	}
+
 	if debug {
 		log.Printf("DEBUG %s is valid\n", filePath)
 	}
