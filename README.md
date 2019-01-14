@@ -4,7 +4,7 @@
 
 ## Background
 
-This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link), affecting all versions of [ChartMuseum](https://github.com/helm/chartmuseum) <= 0.8.0.
+This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://helm.sh/blog/chartmuseum-security-notice-2019/index.html), affecting all versions of ChartMuseum <= 0.8.0.
 
 ## Example
 
@@ -210,9 +210,9 @@ chart-scanner --debug \
 ```
 
 ### Note on environment variables
-All command-line options can be specified as environment variables, which are defined by the command-line option, capitalized, with all -'s replaced with _'s.
+All command-line options can be specified as environment variables, which are defined by the command-line option, capitalized, with all `-`'s replaced with `_`'s.
 
-For example, the env var STORAGE_AMAZON_BUCKET can be used in place of --storage-amazon-bucket.
+For example, the env var `STORAGE_AMAZON_BUCKET` can be used in place of `--storage-amazon-bucket`.
 
 ## Reporting a Security Issue
 
