@@ -1,6 +1,6 @@
 FROM golang:1.11-alpine as builder
-ADD . /go/src/github.com/jdolitsky/chart-scanner
-WORKDIR /go/src/github.com/jdolitsky/chart-scanner
+ADD . /go/src/github.com/chartmuseum/chart-scanner
+WORKDIR /go/src/github.com/chartmuseum/chart-scanner
 RUN apk add --update make git
 RUN make build-linux && mv bin/linux/amd64/chart-scanner /chart-scanner
 

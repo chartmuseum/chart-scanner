@@ -1,6 +1,6 @@
 # chart-scanner
 
-[![Codefresh build status](https://g.codefresh.io/api/badges/pipeline/chartmuseum/jdolitsky%2Fchart-scanner%2Fmaster?type=cf-1)](https://g.codefresh.io/public/accounts/chartmuseum/pipelines/jdolitsky/chart-scanner/master)
+[![Codefresh build status](https://g.codefresh.io/api/badges/pipeline/chartmuseum/chartmuseum%2Fchart-scanner%2Fmaster?type=cf-1)](https://g.codefresh.io/public/accounts/chartmuseum/pipelines/chartmuseum/chart-scanner/master)
 
 ## Background
 
@@ -11,7 +11,7 @@ This tool will attempt to detect any charts that may have been uploaded via [thi
 The following shows detection of the test chart `evil-1.0.0.tgz` found in this repo:
 
 ```
-$ git clone git@github.com:jdolitsky/chart-scanner.git
+$ git clone git@github.com:chartmuseum/chart-scanner.git
 $ cd chart-scanner
 $ chart-scanner --debug --storage=local --storage-local-rootdir=$(pwd)/testdata/charts
 2019/01/13 17:45:17 DEBUG org1/repo1/acs-engine-autoscaler-2.2.2.tgz is valid
@@ -27,13 +27,13 @@ $ echo $?
 
 ### CLI
 
-Install from the latest [release artifacts](https://github.com/jdolitsky/chart-scanner/releases):
+Install from the latest [release artifacts](https://github.com/chartmuseum/chart-scanner/releases):
 ```
 # Linux
-curl -LO https://github.com/jdolitsky/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_linux_amd64.tar.gz
+curl -LO https://github.com/chartmuseum/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_linux_amd64.tar.gz
 
 # macOS
-curl -LO https://github.com/jdolitsky/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_darwin_amd64.tar.gz
+curl -LO https://github.com/chartmuseum/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_darwin_amd64.tar.gz
 
 # unpack, install, dispose
 mkdir -p chart-scanner-install/
@@ -45,7 +45,7 @@ rm -rf chart-scanner_0.1.0_*.tar.gz chart-scanner-install/
 or via go get:
 
 ```
-go get -u github.com/jdolitsky/chart-scanner/cmd/chart-scanner
+go get -u github.com/chartmuseum/chart-scanner/cmd/chart-scanner
 ```
 
 Then, to run:
@@ -56,10 +56,10 @@ chart-scanner --help
 
 ### Docker Image 
 
-A public Docker image containing the CLI is available on [Docker Hub](https://hub.docker.com/r/jdolitsky/chart-scanner):
+A public Docker image containing the CLI is available on [Docker Hub](https://hub.docker.com/r/chartmuseum/chart-scanner):
 
 ```
-docker run -it --rm jdolitsky/chart-scanner:v0.1.0 --help
+docker run -it --rm chartmuseum/chart-scanner:v0.1.0 --help
 ```
 
 ## Usage

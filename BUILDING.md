@@ -54,4 +54,4 @@ and run [.codefresh/release.yml](.codefresh/release.yml).
 
 This will result in running [goreleaser](https://goreleaser.com/)
 to upload release artiacts, as well as push a tag to Docker Hub for
-the image `jdolitsky/chart-scanner`.
+the image `chartmuseum/chart-scanner`.

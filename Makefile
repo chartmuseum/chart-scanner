@@ -2,7 +2,7 @@ VERSION=0.1.0
 REVISION := $(shell git rev-parse --short HEAD;)
 
 CLI_EXE=chart-scanner
-CLI_PKG=github.com/jdolitsky/chart-scanner/cmd/chart-scanner
+CLI_PKG=github.com/chartmuseum/chart-scanner/cmd/chart-scanner
 
 .PHONY: build
 build: build-linux build-mac build-windows
