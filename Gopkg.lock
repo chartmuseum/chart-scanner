@@ -158,6 +158,14 @@
   version = "v0.3.0"
 
 [[projects]]
+  digest = "1:ec66ad050342a3573ed2f5a4337d51b4c6d5d2a717cc6c9ecf86b081235a5759"
+  name = "github.com/cyphar/filepath-securejoin"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "a261ee33d7a517f054effbf451841abaafe3e0fd"
+  version = "v0.2.2"
+
+[[projects]]
   digest = "1:76dc72490af7174349349838f2fe118996381b31ea83243812a97e5a0fd5ed55"
   name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
@@ -320,6 +328,14 @@
   pruneopts = "UT"
   revision = "c01d1270ff3e442a8a57cddc1c92dc1138598194"
   version = "v1.2.0"
+
+[[projects]]
+  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
 
 [[projects]]
   digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
@@ -583,7 +599,7 @@
   revision = "fa6ddc151d63306b3540a37d910a07b181e4a474"
 
 [[projects]]
-  digest = "1:700a0e91e6b0cdb04bdab594e703c4c7ff0a5acb129cd584e6d1951bc5aec6f0"
+  digest = "1:a8e07fd68f8a29722cb43bc2d2b1464ac793cad7f7df7ca242b43f34ef38adb4"
   name = "k8s.io/helm"
   packages = [
     "pkg/chartutil",
@@ -594,8 +610,8 @@
     "pkg/version",
   ]
   pruneopts = "UT"
-  revision = "02a47c7249b1fc6d8fd3b94e6b4babf9d818144e"
-  version = "v2.12.1"
+  revision = "7d2b0c73d734f6586ed222a567c5d103fed435be"
+  version = "v2.12.2"
 
 [solve-meta]
   analyzer-name = "dep"
