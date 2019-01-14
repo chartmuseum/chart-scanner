@@ -57,7 +57,7 @@ chart-scanner --help
 A public Docker image containing the CLI is available on [Docker Hub](https://hub.docker.com/r/jdolitsky/chart-scanner):
 
 ```
-docker run -it --rm jdolitsky/chart-scanner:v0.1.0 help
+docker run -it --rm jdolitsky/chart-scanner:v0.1.0 --help
 ```
 
 ## Usage
