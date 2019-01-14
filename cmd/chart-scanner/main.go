@@ -13,10 +13,10 @@ import (
 
 var (
 	// Version is the semantic version (added at compile time)
-	Version string
+	version string
 
 	// Revision is the git commit id (added at compile time)
-	Revision string
+	revision string
 
 	exitCode int
 )
@@ -25,7 +25,7 @@ func main() {
 	log.SetOutput(os.Stdout)
 	app := cli.NewApp()
 	app.Name = "chart-scanner"
-	app.Version = fmt.Sprintf("%s (build %s)", Version, Revision)
+	app.Version = fmt.Sprintf("%s (build %s)", version, revision[0:6])
 	app.Usage = "checks a storage directory for evil charts"
 	app.Flags = buildCliFlags()
 	app.Action = cliHandler
