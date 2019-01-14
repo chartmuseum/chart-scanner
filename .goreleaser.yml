@@ -3,6 +3,8 @@ builds:
   binary: ./chart-scanner
   env:
   - CGO_ENABLED=0
+  ldflags:
+  - -w -X main.version={{.Version}} -X main.revision={{.ShortCommit}}
   goos:
   - darwin
   - linux

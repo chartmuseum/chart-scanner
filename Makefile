@@ -9,17 +9,17 @@ build: build-linux build-mac build-windows
 
 build-windows:
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -v \
-		--ldflags="-w -X main.version=$(VERSION) -X main.revision=$(REVISION)" \
+		--ldflags="-w -X main.Version=$(VERSION) -X main.Revision=$(REVISION)" \
 		-o bin/windows/amd64/$(CLI_EXE) $(CLI_PKG)  # windows
 
 build-linux:
 	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -v \
-		--ldflags="-w -X main.version=$(VERSION) -X main.revision=$(REVISION)" \
+		--ldflags="-w -X main.Version=$(VERSION) -X main.Revision=$(REVISION)" \
 		-o bin/linux/amd64/$(CLI_EXE) $(CLI_PKG)  # linux
 
 build-mac:
 	GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -v \
-		--ldflags="-w -X main.version=$(VERSION) -X main.revision=$(REVISION)" \
+		--ldflags="-w -X main.Version=$(VERSION) -X main.Revision=$(REVISION)" \
 		-o bin/darwin/amd64/$(CLI_EXE) $(CLI_PKG) # mac osx
 
 .PHONY: clean
