@@ -4,14 +4,6 @@
 
 This tool will attempt to detect any charts that may have been uploaded via [this vulnerability](https://need-a-link), affecting all versions of [ChartMuseum](https://github.com/helm/chartmuseum) <= 0.8.0.
 
-## Installation
-
-Install via go get:
-
-```
-go get -u github.com/jdolitsky/chart-scanner/cmd/chart-scanner
-```
-
 ## Example
 
 The following shows detection of the test chart `evil-1.0.0.tgz` found in this repo:
@@ -29,11 +21,48 @@ $ echo $?
 1
 ```
 
+## Installation
+
+### CLI
+
+Install from the latest [release artifacts](https://github.com/jdolitsky/chart-scanner/releases):
+```
+# Linux
+curl -LO https://github.com/jdolitsky/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_linux_amd64.tar.gz
+
+# macOS
+curl -LO https://github.com/jdolitsky/chart-scanner/releases/download/v0.1.0/chart-scanner_0.1.0_darwin_amd64.tar.gz
+
+# unpack, install, dispose
+mkdir -p chart-scanner-install/
+tar -zxf chart-scanner_0.1.0_*.tar.gz -C chart-scanner-install/
+mv chart-scanner-install/chart-scanner /usr/local/bin/
+rm -rf chart-scanner_0.1.0_*.tar.gz chart-scanner-install/
+```
+
+or via go get:
+
+```
+go get -u github.com/jdolitsky/chart-scanner/cmd/chart-scanner
+```
+
+Then, to run:
+
+```
+chart-scanner --help
+```
+
+### Docker Image 
+
+A public Docker image containing the CLI is available on [Docker Hub](https://hub.docker.com/r/jdolitsky/chart-scanner):
+
+```
+docker run -it --rm jdolitsky/chart-scanner:v0.1.0 help
+```
+
 ## Usage
 
 Command-line storage options are identical to the ones used in ChartMuseum (the package is imported and re-used).
-
-See all available options with `chart-scanner --help`.
 
 ### Using with Amazon S3
 
