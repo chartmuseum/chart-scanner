@@ -14,11 +14,13 @@ The following shows detection of the test chart `evil-1.0.0.tgz` found in this r
 $ git clone git@github.com:chartmuseum/chart-scanner.git
 $ cd chart-scanner
 $ chart-scanner --debug --storage=local --storage-local-rootdir=$(pwd)/testdata/charts
-2019/01/13 17:45:17 DEBUG org1/repo1/acs-engine-autoscaler-2.2.2.tgz is valid
-2019/01/13 17:45:17 DEBUG org1/repo2/aerospike-0.1.7.tgz is valid
-2019/01/13 17:45:17 DEBUG org2/repo1/apm-server-0.1.0.tgz is valid
-2019/01/13 17:45:17 DEBUG org2/repo2/ark-1.2.3.tgz is valid
-2019/01/13 17:45:17 ERROR org2/repo2/evil-1.0.0.tgz has bad chart name "../../../../charts/org2/repo2/evil"
+2019/01/14 13:34:55 DEBUG org1/repo1/acs-engine-autoscaler-2.2.2.tgz is valid
+2019/01/14 13:34:55 DEBUG org1/repo1/acs-engine-autoscaler-2.2.2.tgz.prov is valid
+2019/01/14 13:34:55 DEBUG org1/repo2/aerospike-0.1.7.tgz is valid
+2019/01/14 13:34:55 DEBUG org2/repo1/apm-server-0.1.0.tgz is valid
+2019/01/14 13:34:55 DEBUG org2/repo2/ark-1.2.3.tgz is valid
+2019/01/14 13:34:55 ERROR org2/repo2/evil-1.0.0.tgz has bad chart name "../../../../charts/org2/repo2/evil"
+2019/01/14 13:34:55 ERROR org2/repo2/evil-1.0.0.tgz.prov has bad chart name "../../../../charts/org2/repo2/evil"
 $ echo $?
 1
 ```
