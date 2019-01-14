@@ -1,0 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+name: acs-engine-autoscaler
+version: 2.2.2
+
+...
+files:
+  acs-engine-autoscaler-2.2.2.tgz: sha256:c6f72533ad1c3f49fb0aa5c217f01a07bafcb95d99080886119bd6ef8c00ae0c
+-----BEGIN PGP SIGNATURE-----
+
+wsBcBAEBCgAQBQJcPOKICRCEO7+YH8GHYgAAYGUIAGUwQsZfMvVsozGnt78YOfmb
+d/8vtSRPOjDBKSJ32a07V/yzAPBO7tEXg8Il/lfvTl+QcFOuVgqVXs44oHcenioJ
+2AT0y7QgKeWYPGpszDVOpTqwhdPiCYoKTQ/bvxzqWyERVQxl9d3V6JCq3uOk0toy
+RwCI1PHj7IllbHiI0ZFhoNy0ceGFhuXsHS0mHSeF7rXNPSZXhpWdiUSQO9adrXu/
+lujK9PVT3yOVuRNr1RlrUIJ2hADelyP9Z6t1tybjw01GlBY5jjoo+8ScVOCzlEKv
+kiPyXF1dKmW4g/RlbrtO7nLn/3OI9fkordOkg4Ea9vj/doDMy+YlHU7xGOtTeoA=
+=7EsU
+-----END PGP SIGNATURE-----
